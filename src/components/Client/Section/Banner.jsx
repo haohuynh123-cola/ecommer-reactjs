@@ -1,6 +1,6 @@
 import React from 'react';
-import banner1 from '../../assets/img/banner/banner-1.jpg'
-import banner2 from '../../assets/img/banner/banner-2.jpg'
+import banner1 from '../../../assets/img/banner/banner-1.jpg'
+import banner2 from '../../../assets/img/banner/banner-2.jpg'
 function Banner(props) {
   return (
     <React.Fragment>

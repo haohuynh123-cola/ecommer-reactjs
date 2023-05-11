@@ -1,9 +1,21 @@
 import React from 'react';
-import logo from '../assets/img/logo.png'
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import logo from '../../assets/img/logo.png'
+
+import "../../assets/css/bootstrap.min.css";
+import "../../assets/css/elegant-icons.css";
+import "../../assets/css/font-awesome.min.css";
+import "../../assets/css/nice-select.css";
+import "../../assets/css/style.css";
+import "../../assets/css/slicknav.min.css";
+
+
 function Header(props) {
+  const counter = useSelector(state => state.cartItems.length) || 0;
+  const totalPrice = useSelector(state => state.totalPrice) || 0;
   return (
-    <React.Fragment>
+    <>
       <header className="header">
         <div className="header__top">
           <div className="container">
@@ -45,7 +57,7 @@ function Header(props) {
           <div className="row">
             <div className="col-lg-3">
               <div className="header__logo">
-                <a href="./index.html"><img src={logo} alt="" /></a>
+                <NavLink to="/"><img src={logo} alt="" /></NavLink>
               </div>
             </div>
             <div className="col-lg-6">
@@ -69,10 +81,13 @@ function Header(props) {
             <div className="col-lg-3">
               <div className="header__cart">
                 <ul>
-                  <li><a href="#"><i className="fa fa-heart"></i> <span>1</span></a></li>
-                  <li><a href="#"><i className="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                  <li>
+                    <a href="#"><i className="fa fa-heart "></i> <span>1</span></a>
+                  </li>
+                  <li><NavLink to="cart-detail"><i className="fa fa-shopping-bag"></i> <span>{counter}</span></NavLink>
+                  </li>
                 </ul>
-                <div className="header__cart__price">item: <span>$150.00</span></div>
+                <div className="header__cart__price">Price: <span>${totalPrice}</span></div>
               </div>
             </div>
           </div>
@@ -81,8 +96,10 @@ function Header(props) {
           </div>
         </div>
       </header>
-    </React.Fragment>
+
+    </>
   );
 }
+// Connect React component to Redux store
 
 export default Header;

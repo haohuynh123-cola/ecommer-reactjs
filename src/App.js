@@ -1,17 +1,26 @@
 import React from "react";
-import "./assets/css/bootstrap.min.css";
-import "./assets/css/elegant-icons.css";
-import "./assets/css/font-awesome.min.css";
-import "./assets/css/nice-select.css";
-import "./assets/css/style.css";
-import "./assets/css/slicknav.min.css";
 import Routing from "./routing/Routing";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "./hook/ScrollToTop";
 function App() {
       return (
-            <React.Fragment>
-                  <Routing></Routing>
-            </React.Fragment>
+            <>
+                  <ScrollToTop />
+                  <Routing admin={true}></Routing>
+                  <ToastContainer
+                        position="bottom-right"
+                        autoClose={2000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                  />
+            </>
       );
 }
 

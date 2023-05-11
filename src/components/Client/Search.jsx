@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import banner from '../assets/img/banner/banner-1.jpg'
+import banner from '../../assets/img/banner/banner-1.jpg'
 function Search(props) {
   const [allCategory, setAllCategory] = useState(false)
 
@@ -9,13 +9,13 @@ function Search(props) {
 
   return (
     <React.Fragment>
-      <section class="hero">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="hero__categories">
-                <div class="hero__categories__all" onClick={handleClickAllCategory}>
-                  <i class="fa fa-bars"></i>
+      <section className="hero">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-3">
+              <div className="hero__categories">
+                <div className="hero__categories__all" onClick={handleClickAllCategory}>
+                  <i className="fa fa-bars"></i>
                   <span>All departments</span>
                 </div>
                 <ul style={{ display: allCategory ? 'block' : 'none' }}>
@@ -33,34 +33,34 @@ function Search(props) {
                 </ul>
               </div>
             </div>
-            <div class="col-lg-9">
-              <div class="hero__search">
-                <div class="hero__search__form">
+            <div className="col-lg-9">
+              <div className="hero__search">
+                <div className="hero__search__form">
                   <form action="#">
-                    <div class="hero__search__categories">
+                    <div className="hero__search__categories">
                       All Categories
-                      <span class="arrow_carrot-down"></span>
+                      <span className="arrow_carrot-down"></span>
                     </div>
                     <input type="text" placeholder="What do yo u need?" />
-                    <button type="submit" class="site-btn">SEARCH</button>
+                    <button type="submit" className="site-btn">SEARCH</button>
                   </form>
                 </div>
-                <div class="hero__search__phone">
-                  <div class="hero__search__phone__icon">
-                    <i class="fa fa-phone"></i>
+                <div className="hero__search__phone">
+                  <div className="hero__search__phone__icon">
+                    <i className="fa fa-phone"></i>
                   </div>
-                  <div class="hero__search__phone__text">
+                  <div className="hero__search__phone__text">
                     <h5>+65 11.188.888</h5>
                     <span>support 24/7 time</span>
                   </div>
                 </div>
               </div>
-              <div class="hero__item set-bg" style={{ backgroundImage: `url(${banner})` }}>
-                <div class="hero__text">
+              <div className="hero__item set-bg" style={{ backgroundImage: `url(${banner})` }}>
+                <div className="hero__text">
                   <span>FRUIT FRESH</span>
                   <h2>Vegetable <br />100% Organic</h2>
                   <p>Free Pickup and Delivery Available</p>
-                  <a href="#" class="primary-btn">SHOP NOW</a>
+                  <a href="#" className="primary-btn">SHOP NOW</a>
                 </div>
               </div>
             </div>
