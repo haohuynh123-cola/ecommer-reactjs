@@ -1,21 +1,16 @@
 import React from 'react';
-import { Route, Router, Routes } from 'react-router';
-import HonePage from '../page/HonePage';
-import Product from '../page/Product';
-import Header from '../components/Header';
-import Search from '../components/Search';
-import Footer from '../components/Footer';
+import { Route, Routes } from 'react-router';
+import Client from './Client';
+import Admin from './Admin';
 
 function Routing(props) {
   return (
-    <React.Fragment>
-      <Header></Header>
+    <React.Fragment >
       <Routes>
-        <Route exact path="/" element={<HonePage />} />
-        <Route path="/products" element={<Product />} />
+        <Route path="/*" element={<Client />} />
+        <Route path="/system/*" element={<Admin />} />
       </Routes>
-      <Footer></Footer>
-    </React.Fragment>
+    </React.Fragment >
   );
 }
 

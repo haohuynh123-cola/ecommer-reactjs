@@ -22,10 +22,10 @@ const axiosInstance = axios.create({
       // })
 });
 
-axiosInstance.interceptors.response.use((response) => {
-      const { data } = response;
-      return data;
-});
+// axiosInstance.interceptors.response.use((response) => {
+//       const { data } = response;
+//       return data;
+// });
 
 const setUpToken = (token) => {
       axiosInstance.defaults.headers.common[
