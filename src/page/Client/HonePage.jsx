@@ -17,16 +17,25 @@ function HonePage(props) {
   }, [])
 
   const getAllProductFunc = async () => {
-    const param = {
-      limit: 10
+    try {
+      const param = {
+        limit: 10
+      }
+      const res = await getAllProduct(param)
+      setProducts(res.data)
+
+    } catch (e) {
+      console.log(e)
     }
-    const res = await getAllProduct(param)
-    setProducts(res.data)
 
   }
   const handleGetAllCategories = async () => {
-    const res = await getAllCategories()
-    setCategories(res.data)
+    try {
+      const res = await getAllCategories()
+      setCategories(res.data)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return (
